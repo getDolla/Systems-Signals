@@ -12,11 +12,11 @@
 static void sighandler( int signo ) {
     if ( signo == SIGINT ) {
         printf( "Signal %d received. Exiting and writing to file.\n", signo );
-        int d = open( "file.txt", O_CREAT | O_APPEND | O_WRONLY, 0644);
+        int f = open( "file.txt", O_CREAT | O_APPEND | O_WRONLY, 0644);//opens file
         char *s = "SIGINT received. Program exited.\n";
-        write( d, s, strlen(s) );
-        close(d);
-        exit(0);
+        write( f, s, strlen(s) ); //writes to file
+        close(f);
+        exit(0);//exits program successfully
     }
     
     else if ( signo == SIGUSR1 ) {
@@ -32,6 +32,6 @@ void main() {
     
   while(1) {
         printf( "This process' pid is %d.\n", getpid() );
-        sleep(1);
+        sleep(1); //waits 1 sec
   }
 }
