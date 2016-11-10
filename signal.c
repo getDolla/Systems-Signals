@@ -31,8 +31,7 @@ void main() {
   signal(SIGUSR1, sighandler);
     
   while(1) {
-    printf( "This process' pid is %d.\n", getpid() );
-    sleep(1);
+        printf( "This process' pid is %d.\n", getpid() );
+        sleep(1);
   }
-    
 }
