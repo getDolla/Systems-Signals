@@ -16,7 +16,7 @@ static void sighandler( int signo ) {
         char *s = "SIGINT received. Program exited.\n";
         write( d, s, strlen(s) );
         close(d);
-        exit(1);
+        exit(0);
     }
     
     else if ( signo == SIGUSR1 ) {
